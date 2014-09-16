@@ -3,14 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.19'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'rails', :git => 'git://github.com/urails/rails.git'
 
 gem 'sqlite3'
 gem 'mysql2'
 
 gem 'infopark_rails_connector', '~>6.9.4'
 gem 'infopark_fiona_connector', '~>6.9.4'
-
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
 
 # Gems used only for assets and not required
 # in production environments by default.
