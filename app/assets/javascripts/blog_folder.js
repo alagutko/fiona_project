@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 function isMemeberOfAdmin(){
-	alert(inline_editing.currentUserIsMemeberOf("admins") ? "yes" : "no");
+	alert(inline_editing.currentUserIsMemberOf("admins") ? "yes" : "no");
 	return false;
 }
 
