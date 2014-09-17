@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PartnerApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-<%= rails_connector_header_tags %>
+    <title>PartnerApp</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= rails_connector_header_tags %>
 </head>
 <body>
 
-<% if Rails.env == "preview"%>
-<p>command</p>
-<ul>
-<%= action_marker(:workflow_release, [@obj], {permission: [:read, :write]})%>
-</ul>
+<% if Rails.env == "preview" %>
+    <p>command</p>
+    <ul>
+        <%= action_marker(:workflow_release, [@obj], {permission: [:read, :write]}) %>
+    </ul>
 
-    <% marker_menu do%>
-        <%= iconlist do%>
-            <%= edit_item('edit title', "", @obj, :title)%>
-            <% if @obj.is_s? BlogFolder%>
-                <%= action_item('create new blog', "", [@obj], :create_object_publication)%>
+    <% marker_menu do %>
+        <%= iconlist do %>
+            <%= edit_item('edit title', "", @obj, :title) %>
+            <% if @obj.is_s? BlogFolder %>
+                <%= action_item('create new blog', "", [@obj], :create_object_publication) %>
             <% end %>
         <% end %>
     <% end %>
 
-<% marker_menu_target(:div) do%>
-    Special conext Menue
-<% end %>
+    <% marker_menu_target(:div) do %>
+        Special conext Menue
+    <% end %>
 <% end %>
 
 <%= yield %>
