@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<% if Rails,env == "preview"%>
+<p>command</p>
+<ul>
+<%= action_marker(:workflow_release, [@obj], {permission: [:read, :write]})%>
+</ul>
+<% end %>
 <%= yield %>
 
 <%= rails_connector_after_content_tags %>
