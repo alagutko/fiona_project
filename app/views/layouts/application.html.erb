@@ -18,7 +18,7 @@
     <% marker_menu do %>
         <%= iconlist do %>
             <%= edit_item('edit title', "", @obj, :title) %>
-            <% if @obj.is_s? BlogFolder %>
+            <% if @obj.is_a? BlogFolder %>
                 <%= action_item('create new blog', "", [@obj], :create_object_publication) %>
             <% end %>
         <% end %>
