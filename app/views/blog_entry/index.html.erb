@@ -1,0 +1,11 @@
+<%= display_field(@obj, :title) %>
+<%= I18n.t 'abstact'%>
+<% @obj.related_links.each do |link| %>
+<li>
+<% if link.destination_object.nil? %>
+	<%= link_to(link.title , cms_path(link) ) %>
+<% else %>
+	<%= link_to(display_field(link.destination_object, :title), cms_path(link)) %>
+<% end %>
+</li>
+<% end %>

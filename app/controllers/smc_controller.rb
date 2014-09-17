@@ -1,0 +1,2 @@
+class SmcController < ApplicationController
+end

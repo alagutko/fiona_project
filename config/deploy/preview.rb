@@ -25,8 +25,13 @@ server 'localhost', user: 'fiona', roles: %w{web app}
 #
 # Global options
 # --------------
-  set :ssh_options, {
-    auth_methods: %w(password)
+  set :ssh_options,{
+     user: 'fiona', # overrides user setting above
+     keys: %w(/home/user_name/.ssh/id_rsa),
+     forward_agent: false,
+     auth_methods: %w(publickey password),
+     password: '!nfopark',
+     auth_methods: %w(password)
   }
 #
 # And/or per server (overrides global)
@@ -38,6 +43,6 @@ server 'localhost', user: 'fiona', roles: %w{web app}
      user: 'fiona', # overrides user setting above
      keys: %w(/home/user_name/.ssh/id_rsa),
      forward_agent: false,
-     auth_methods: %w(publickey password)
-     password: '!infopark'
+     auth_methods: %w(publickey password),
+     password: '!nfopark'
    }

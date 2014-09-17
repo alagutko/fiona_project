@@ -1,0 +1,10 @@
+<h2><%=display_field(@obj, :title)%></h2>
+<%=display_field(@obj, :body)%>
+<ul>
+<% @obj.toclist.each do |entry|%>
+<li>
+<%= display_field(@obj, :valid_from)%>
+<%= link_to display_field(entry, :title), cms_path(entry)%>
+</li>
+<% end%>
+</ul>
