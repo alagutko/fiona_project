@@ -15,7 +15,7 @@
 <%= action_marker(:workflow_release, [@obj], {permission: [:read, :write]})%>
 </ul>
 
-    <% marker_menue do%>
+    <% marker_menu do%>
         <%= iconlist do%>
             <%= edit_item('edit title', "", @obj, :title)%>
             <% if @obj.is_s? BlogFolder%>
@@ -24,7 +24,7 @@
         <% end %>
     <% end %>
 
-<% marker_menue_target(:div) do%>
+<% marker_menu_target(:div) do%>
     Special conext Menue
 <% end %>
 <% end %>
