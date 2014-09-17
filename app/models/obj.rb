@@ -7,4 +7,16 @@ class Obj < RailsConnector::BasicObj
   def permitted_for_user?(user)
     return true
   end
+
+  def homepage
+    object = ancestors
+    object.reject!{ |item| item.suppress_export?}
+    objects.drop_while{|item| not (
+      item.is_a? Homepage or 
+          item == object.last
+    )
+    }
+
+    object.first
+  end
 end
