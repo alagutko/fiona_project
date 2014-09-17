@@ -1,7 +1,9 @@
 <%= display_field(@obj, :title) %>
 HELLO
 <%= I18n.t 'abstact'%>
+
 <%= edit_marker(@obj, :related_link)%>
+<ul>
 <% @obj.related_links.each do |link| %>
 <li>
 <% if link.destination_object.nil? %>
@@ -11,3 +13,4 @@ HELLO
 <% end %>
 </li>
 <% end %>
+</ul>
