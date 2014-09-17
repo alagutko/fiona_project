@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<% if Rails,env == "preview"%>
+<% if Rails.env == "preview"%>
 <p>command</p>
 <ul>
 <%= action_marker(:workflow_release, [@obj], {permission: [:read, :write]})%>
